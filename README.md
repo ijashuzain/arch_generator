@@ -25,7 +25,9 @@ dev_dependencies:
 
 To generate the boilerplate code for your project, run the following command:
 
-```dart dart pub run arch_generator --ddd build
+```dart 
+dart pub run arch_generator --ddd build
+```
 
 This command will create a new folder structure and files for the DDD architecture, including support for `freezed` and `bloc` state management. You can replace `bloc` with `provider` if you prefer using the `provider` state management package.
 
@@ -51,6 +53,7 @@ lib/
 │ └── events/
 └── ui/
 └── widgets/
+```
 
 This folder structure organizes your code into domain, data, and presentation layers, following the DDD principles.
 
