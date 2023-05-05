@@ -16,7 +16,7 @@ A Dart package to generate boilerplate code for Domain-Driven Design (DDD) archi
 
 ```dart
 dev_dependencies:
-  arch_generator: 1.0.0```
+  arch_generator: 1.0.0
 
 2. Run `dart pub get` to fetch the package.
 
@@ -24,7 +24,7 @@ dev_dependencies:
 
 To generate the boilerplate code for your project, run the following command:
 
-```dart dart pub run arch_generator --ddd build```
+```dart dart pub run arch_generator --ddd build
 
 This command will create a new folder structure and files for the DDD architecture, including support for `freezed` and `bloc` state management. You can replace `bloc` with `provider` if you prefer using the `provider` state management package.
 
@@ -49,7 +49,7 @@ lib/
 │ ├── states/
 │ └── events/
 └── ui/
-└── widgets/ ```
+└── widgets/
 
 This folder structure organizes your code into domain, data, and presentation layers, following the DDD principles.
 
