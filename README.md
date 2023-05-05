@@ -1,39 +1,62 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Arch Generator
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+A Dart package to generate boilerplate code for Domain-Driven Design (DDD) architecture with support for `freezed` and `provider` or `bloc` state management.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+## Table of Contents
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Customization](#customization)
+- [License](#license)
 
-## Features
+## Installation
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+1. Add `arch_generator` as a dev dependency in your `pubspec.yaml`:
 
-## Getting started
+dev_dependencies:
+  arch_generator: 1.0.0
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+2. Run `dart pub get` to fetch the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+To generate the boilerplate code for your project, run the following command:
 
-```dart
-const like = 'sample';
-```
+dart pub run arch_generator --ddd --bloc build
 
-## Additional information
+This command will create a new folder structure and files for the DDD architecture, including support for `freezed` and `bloc` state management. You can replace `bloc` with `provider` if you prefer using the `provider` state management package.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+## Folder Structure
+
+The generated folder structure is as follows:
+
+lib/
+├── domain/
+│ ├── entities/
+│ ├── value_objects/
+│ ├── failures/
+│ └── repositories/
+├── data/
+│ ├── models/
+│ ├── repositories/
+│ └── data_sources/
+└── presentation/
+├── state_management/
+│ ├── provider/ (or bloc/)
+│ ├── states/
+│ └── events/
+└── ui/
+└── widgets/
+
+This folder structure organizes your code into domain, data, and presentation layers, following the DDD principles.
+
+## Customization
+
+You can customize the code generation process by modifying the `DddBoilerplateGenerator` and `BlocBoilerplateGenerator` classes in the `arch_generator` package. You can add additional files, folders, or templates as needed to fit your specific use case.
+
+## License
+
+This project is licensed under the MIT License.
+
+Remember to adjust the version number and any other information as needed. Save this README as `README.md` in the root directory of your package. This will help users understand how to use your package and provide a clear overview of its features and usage.
