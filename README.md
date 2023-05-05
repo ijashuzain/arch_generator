@@ -17,6 +17,7 @@ A Dart package to generate boilerplate code for Domain-Driven Design (DDD) archi
 ```dart
 dev_dependencies:
   arch_generator: 1.0.0
+```
 
 2. Run `dart pub get` to fetch the package.
 
