@@ -23,7 +23,7 @@ void main(List<String> arguments) async {
     if (results.command!.name == 'build') {
       final isDDD = results['ddd'] as bool;
       final isMVC = results['mvc'] as bool;
-      final isMVVM = results['ddd'] as bool;
+      final isMVVM = results['mvvm'] as bool;
 
       if (isDDD && isMVC && isMVVM) {
         throw 'Only one architecture command accepted';
