@@ -8,6 +8,7 @@ A Dart package to generate Clean Architecture boilerplate with defferent type of
 - [Usage](#usage)
   - [DDD](#1-ddd-domain-driven-design)
   - [MVC](#2-mvc-model-view-controller)
+  - [MVVM](#3-mvvm-model-view-viewmodel)
 - [Folder Structure](#folder-structure)
 - [Customization](#customization)
 - [License](#license)
