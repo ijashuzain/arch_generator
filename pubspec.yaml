@@ -1,6 +1,6 @@
 name: arch_generator
-description: A Dart package that automatically generates a clean and organized boilerplate code for Domain-Driven Design (DDD) architecture in Flutter projects, with support for freezed, and provider or bloc state management.
-version: 1.0.1
+description: A Dart package that automatically generates a clean and organized boilerplate code for defferent types architecture in Flutter projects.
+version: 1.1.0
 repository: https://github.com/ijashuzain/arch_generator
 
 environment:
@@ -8,9 +8,9 @@ environment:
 
 dependencies:
   path: ^1.8.0
-  freezed_annotation: ^2.2.0
-  meta: ^1.9.1
+  meta: ^1.8.0
   args: ^2.4.1
+  ansicolor: ^2.0.1
 
 
 dev_dependencies:
@@ -19,5 +19,4 @@ dev_dependencies:
   build: ^2.3.1
   build_runner: ^2.3.3
   build_test: ^2.1.7
-  freezed: ^2.3.3
   source_gen: ^1.3.0

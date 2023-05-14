@@ -1,3 +1,4 @@
-## 1.0.0
+## 1.1.0
 
-- Initial version.
+- Bug fixes
+- Updated folder structure for DDD 

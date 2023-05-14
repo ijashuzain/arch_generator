@@ -1,11 +1,12 @@
 # Arch Generator
 
-A Dart package to generate boilerplate code for Domain-Driven Design (DDD) architecture with support for `freezed` and `provider` or `bloc` state management.
+A Dart package to generate Clean Architecture boilerplate with defferent type of design approch such as `ddd` and `mvc` or `mvvm`. 
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [DDD](#1-ddd-domain-driven-design)
 - [Folder Structure](#folder-structure)
 - [Customization](#customization)
 - [License](#license)
@@ -23,13 +24,15 @@ dev_dependencies:
 
 ## Usage
 
+## 1. DDD (Domain Driven Design)
+
 To generate the boilerplate code for your project, run the following command:
 
 ```dart 
 dart pub run arch_generator --ddd build
 ```
 
-This command will create a new folder structure and files for the DDD architecture, including support for `freezed` and `bloc` state management. You can replace `bloc` with `provider` if you prefer using the `provider` state management package.
+This command will create a new folder structure and files for the DDD architecture.
 
 ## Folder Structure
 
@@ -37,29 +40,37 @@ The generated folder structure is as follows:
 
 ```
 lib/
-├── domain/
-│ ├── entities/
-│ ├── value_objects/
-│ ├── failures/
-│ └── repositories/
+│
+├── core/
+│   ├── locator/
+│   ├── services/
+│   ├── constants/
+│   └── utils/
+│       ├── date_utils.dart
+│
 ├── data/
-│ ├── models/
-│ ├── repositories/
-│ └── data_sources/
+│   ├── models/
+│   ├── repositories/
+│   ├── data_sources/
+│   │   ├── remote/
+│   │   └── local/
+│
+├── domain/
+│   ├── entities/
+│   ├── value_objects/
+│   │   ├── EmailAddress.dart
+│   │   └── Password.dart
+│   ├── failures/
+│   │   └── Failures.dart
+│   └── repositories/
+│
 └── presentation/
-├── state_management/
-│ ├── provider/ (or bloc/)
-│ ├── states/
-│ └── events/
-└── ui/
-└── widgets/
+    ├── state_management/
+    ├── screens/
+    └── widgets/
 ```
 
 This folder structure organizes your code into domain, data, and presentation layers, following the DDD principles.
-
-## Customization
-
-You can customize the code generation process by modifying the `DddBoilerplateGenerator` class in the `arch_generator` package. You can add additional files, folders, or templates as needed to fit your specific use case.
 
 ## License
 

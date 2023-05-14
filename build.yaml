@@ -1,0 +1,2 @@
+executables:
+  arch_generator: bin/arch_generator
