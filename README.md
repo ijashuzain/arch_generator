@@ -7,6 +7,7 @@ A Dart package to generate Clean Architecture boilerplate with defferent type of
 - [Installation](#installation)
 - [Usage](#usage)
   - [DDD](#1-ddd-domain-driven-design)
+  - [MVC](#2-mvc-model-view-controller)
 - [Folder Structure](#folder-structure)
 - [Customization](#customization)
 - [License](#license)
@@ -17,7 +18,7 @@ A Dart package to generate Clean Architecture boilerplate with defferent type of
 
 ```dart
 dev_dependencies:
-  arch_generator: 1.0.0
+  arch_generator: 2.0.0
 ```
 
 2. Run `dart pub get` to fetch the package.
@@ -71,6 +72,74 @@ lib/
 ```
 
 This folder structure organizes your code into domain, data, and presentation layers, following the DDD principles.
+
+## 2. MVC (Model-View-Controller)
+
+To generate the boilerplate code for your project, run the following command:
+
+```dart 
+dart pub run arch_generator --mvc build
+```
+
+This command will create a new folder structure and files for the MVC architecture.
+
+## Folder Structure
+
+The generated folder structure is as follows:
+
+```
+lib
+└── core
+    └── locator
+    └── services
+    └── constants
+    └── utils
+        └── global_functions.dart
+└── data
+    └── models
+    └── repositories
+    └── data_sources
+        └── remote
+        └── local
+└── controllers
+└── views
+```
+
+This folder structure organizes your code into model, view, and controller layers, following the MVC principles.
+
+## 3. MVVM (Model-View-ViewModel)
+
+To generate the boilerplate code for your project, run the following command:
+
+```dart 
+dart pub run arch_generator --mvvm build
+```
+
+This command will create a new folder structure and files for the MVVM architecture.
+
+## Folder Structure
+
+The generated folder structure is as follows:
+
+```
+lib
+└── core
+    └── locator
+    └── services
+    └── constants
+    └── utils
+        └── global_functions.dart
+└── data
+    └── models
+    └── repositories
+    └── data_sources
+        └── remote
+        └── local
+└── view_models
+└── views
+```
+
+This folder structure organizes your code into model, view, and ViewModel layers, following the MVVM principles.
 
 ## License
 

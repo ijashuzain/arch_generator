@@ -9,7 +9,9 @@ void main(List<String> arguments) async {
 
   try {
     final parser = ArgParser()
-      ..addFlag('ddd', abbr: 'd', help: 'Generate DDD boilerplate')
+      ..addFlag('ddd', help: 'Generate DDD boilerplate')
+      ..addFlag('mvc', help: 'Generate MVC boilerplate')
+      ..addFlag('mvvm', help: 'Generate MVVM boilerplate')
       ..addCommand('build');
 
     final results = parser.parse(arguments);
@@ -19,8 +21,23 @@ void main(List<String> arguments) async {
     }
 
     if (results.command!.name == 'build') {
-      final ddd = results['ddd'] as bool;
-      await runGenerators(ddd: ddd);
+      final isDDD = results['ddd'] as bool;
+      final isMVC = results['mvc'] as bool;
+      final isMVVM = results['ddd'] as bool;
+
+      if (isDDD && isMVC && isMVVM) {
+        throw 'Only one architecture command accepted';
+      } else if (isDDD || isMVC || isMVVM) {
+        if (isDDD) {
+          await runGenerators(arch: Architecture.ddd);
+        } else if (isMVC) {
+          await runGenerators(arch: Architecture.mvc);
+        } else if (isMVVM) {
+          await runGenerators(arch: Architecture.mvvm);
+        }
+      } else {
+        throw 'Please provide atleast one architecture command. e.g, "--ddd , --mvvm or --mvc"';
+      }
       print(greenPen(
           'Architecture boilerplate successfully generated! Check your lib/ directory for the new structure.'));
     } else {
